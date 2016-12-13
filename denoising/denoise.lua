@@ -18,7 +18,7 @@ opt = {
     gpu = 1,               -- gpu mode. 0 = CPU, 1 = 1st GPU etc.
     nc = 3,                -- # of channels in input
     fineSize = 64,         -- size of overlapping patches
-    sigma = 25,             -- size of gassian blur kernel
+    sigma = 25,            -- size of gassian blur kernel
     stepSize = 3,          -- stride size of overlapping patches
     manualSeed = 0,        -- 0 means random seed
 }
