@@ -1,5 +1,5 @@
 ## From One-Trick Ponies to All-Rounders:  On-Demand Learning for Image Restoration
-[Project Page](http://vision.cs.utexas.edu/projects/on_demand_learning/)            [arXiv](https://arxiv.org/abs/1612.01380)<br/>
+[[Project Page]](http://vision.cs.utexas.edu/projects/on_demand_learning/)    [[arXiv]](https://arxiv.org/abs/1612.01380)<br/>
 
 ![teaser](teaser.jpg "qualitative results on three image restoration tasks")
 
