@@ -73,7 +73,7 @@ If you find our code or project useful in your research, please cite:
   ```Shell
   # Test the image inpainting model on various corruption levels
   cd inpainting
-  DATA_ROOT=dataset/my_test_set name=inpaint_demo net=../models/inpainting_net_G.t7 manualSeed=333 gpu=1 display=1 th demo.lua
+  DATA_ROOT=../dataset/my_test_set name=inpaint_demo net=../models/inpainting_net_G.t7 manualSeed=333 gpu=1 display=1 th demo.lua
   # Demo results saved as inpaint_demo.png
   ```
   
@@ -81,7 +81,7 @@ If you find our code or project useful in your research, please cite:
   ```Shell
   # Train your own image inpainting model
   cd inpainting
-  DATA_ROOT=dataset/my_train_set name=inpaint niter=250 loadSize=96 fineSize=64 display=1 display_iter=50 gpu=1 th train.lua
+  DATA_ROOT=../dataset/my_train_set name=inpaint niter=250 loadSize=96 fineSize=64 display=1 display_iter=50 gpu=1 th train.lua
   ```
   
 ### 2) Pixel Interpolation
@@ -89,7 +89,7 @@ If you find our code or project useful in your research, please cite:
   ```Shell
   # Test the pixel interpolation model on various corruption levels
   cd pixelInterpolation
-  DATA_ROOT=dataset/my_test_set name=pixelInter_demo net=../models/pixelInterpolation_net_G.t7 manualSeed=333 gpu=1 display=1 th demo.lua
+  DATA_ROOT=../dataset/my_test_set name=pixelInter_demo net=../models/pixelInterpolation_net_G.t7 manualSeed=333 gpu=1 display=1 th demo.lua
   # Demo results saved as pixelInter_demo.png
   ```
   
@@ -97,7 +97,7 @@ If you find our code or project useful in your research, please cite:
   ```Shell
   # Train your own pixel interpolation model
   cd pixelInterpolation
-  DATA_ROOT=dataset/my_train_set name=pixel niter=250 loadSize=96 fineSize=64 display=1 display_iter=50 gpu=1 th train.lua
+  DATA_ROOT=../dataset/my_train_set name=pixel niter=250 loadSize=96 fineSize=64 display=1 display_iter=50 gpu=1 th train.lua
   ```
   
 ### 3) Image Deblurring
@@ -105,7 +105,7 @@ If you find our code or project useful in your research, please cite:
   ```Shell
   # Test the image deblurring model on various corruption levels
   cd deblurring
-  DATA_ROOT=dataset/my_test_set name=deblur_demo net=../models/deblurring_net_G.t7 manualSeed=333 gpu=1 display=1 th demo.lua
+  DATA_ROOT=../dataset/my_test_set name=deblur_demo net=../models/deblurring_net_G.t7 manualSeed=333 gpu=1 display=1 th demo.lua
   # Demo results saved as deblur_demo.png
   ```
   
@@ -113,7 +113,7 @@ If you find our code or project useful in your research, please cite:
   ```Shell
   # Train your own image deblurring model
   cd deblurring
-  DATA_ROOT=dataset/my_train_set name=deblur niter=250 loadSize=96 fineSize=64 display=1 display_iter=50 gpu=1 th train.lua
+  DATA_ROOT=../dataset/my_train_set name=deblur niter=250 loadSize=96 fineSize=64 display=1 display_iter=50 gpu=1 th train.lua
   ```
   
 ### 4) Image Denoising
