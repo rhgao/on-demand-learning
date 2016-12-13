@@ -23,7 +23,7 @@ If you find our code or project useful in your research, please cite:
 4. [Image Denoising](#4-image-denoising)
 5. [Sample Code for All Training Schemes](#5-sample-code-for-all-training-schemes)
 
-### 0) Preparation
+### 1) Preparation
 
 1. Install Torch: http://torch.ch/docs/getting-started.html
 
@@ -68,7 +68,7 @@ If you find our code or project useful in your research, please cite:
   # You can then see the training progress in your browser window.
   ```
         
-### 1) Image Inpainting
+### 2) Image Inpainting
 1. Demo
   ```Shell
   # Test the image inpainting model on various corruption levels
@@ -84,7 +84,7 @@ If you find our code or project useful in your research, please cite:
   DATA_ROOT=../dataset/my_train_set name=inpaint niter=250 loadSize=96 fineSize=64 display=1 display_iter=50 gpu=1 th train.lua
   ```
   
-### 2) Pixel Interpolation
+### 3) Pixel Interpolation
 1. Demo
   ```Shell
   # Test the pixel interpolation model on various corruption levels
@@ -100,7 +100,7 @@ If you find our code or project useful in your research, please cite:
   DATA_ROOT=../dataset/my_train_set name=pixel niter=250 loadSize=96 fineSize=64 display=1 display_iter=50 gpu=1 th train.lua
   ```
   
-### 3) Image Deblurring
+### 4) Image Deblurring
 1. Demo
   ```Shell
   # Test the image deblurring model on various corruption levels
@@ -116,7 +116,7 @@ If you find our code or project useful in your research, please cite:
   DATA_ROOT=../dataset/my_train_set name=deblur niter=250 loadSize=96 fineSize=64 display=1 display_iter=50 gpu=1 th train.lua
   ```
   
-### 4) Image Denoising
+### 5) Image Denoising
 Denoising/DB11 contains 11 classic images commonly used to evaluate image denoising algorithms. Because the input of our network is of size 64 x 64, given an image of arbitrary size (assuming larger than 64 x 64), we use a sliding-window approach to denoise each patch separately, then average outputs at overlapping pixels.
   ```Shell
   # Denoise classic image Lena from DB11 dataset
@@ -125,5 +125,5 @@ Denoising/DB11 contains 11 classic images commonly used to evaluate image denois
   # Denoising results saved as denoise.png
   ```
 
-### 5) Sample Code for All Training Schemes
+### 6) Sample Code for All Training Schemes
 training_schemes contains scripts or sample scripts of different training schemes attempted in the paper, including on-demand learning, rigid-joint learning, staged (anti-)curriculum learning and cumulative (anti-)curriculum learning. 
