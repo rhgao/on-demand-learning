@@ -31,35 +31,35 @@ If you find our code or project useful in your research, please cite:
 
 3. Clone the repository
 
-  ```Shell
-  git clone https://github.com/rhgao/on-demand-learning.git
-  ```
+        ```Shell
+        git clone https://github.com/rhgao/on-demand-learning.git
+        ```
   
 4. Download [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) or [SUN397](http://vision.cs.princeton.edu/projects/2010/SUN/) dataset, or prepare your own dataset. 
 
-  ```Shell
-  mkdir -p /your_path/my_train_set/images/
-  # put all training images inside my_train_set/images/
-  mkdir -p /your_path/my_val_set/images/
-  # put all validation images inside my_val_set/images/
-  mkdir -p /your_path/my_test_test/images/
-  # put all testing images inside my_test_set/images/
-  
-  cd on-demand-learning/
-  ln -sf /your_path dataset
-  ```
+        ```Shell
+        mkdir -p /your_path/my_train_set/images/
+        # put all training images inside my_train_set/images/
+        mkdir -p /your_path/my_val_set/images/
+        # put all validation images inside my_val_set/images/
+        mkdir -p /your_path/my_test_test/images/
+        # put all testing images inside my_test_set/images/
+
+        cd on-demand-learning/
+        ln -sf /your_path dataset
+        ```
 
 5. [Optional] If you want to run a quick demo for the four image restoration tasks, please download our pre-trained models using the following script. As in 4, please also create a folder called `my_demo_images` and place all your testing images under a sub-folder called `images`.
 
 6. [Optional] Install the Display Package, which enables you to track the training progress. If you don't want to install it, please set `display=0` in `train.lua`.
 
-```Shell
-luarocks install https://raw.githubusercontent.com/szym/display/master/display-scm-0.rockspec
-#start the display server
-th -ldisplay.start 8000
-# on client side, open in browser: http://localhost:8000/
-# You can then see the training progress in your browser window.
-```
+        ```Shell
+        luarocks install https://raw.githubusercontent.com/szym/display/master/display-scm-0.rockspec
+        #start the display server
+        th -ldisplay.start 8000
+        # on client side, open in browser: http://localhost:8000/
+        # You can then see the training progress in your browser window.
+        ```
 
 ### 1) Image Inpainting
 1. Demo
