@@ -36,18 +36,29 @@ If you find our code or project useful in your research, please cite:
   
 4. Download [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) or [SUN397](http://vision.cs.princeton.edu/projects/2010/SUN/) dataset, or prepare your own dataset. 
   ```Shell
-  mkdir -p /your_path/my_train_set/images/
   # put all training images inside my_train_set/images/
-  mkdir -p /your_path/my_val_set/images/
+  mkdir -p /your_path/my_train_set/images/
   # put all validation images inside my_val_set/images/
-  mkdir -p /your_path/my_test_test/images/
+  mkdir -p /your_path/my_val_set/images/
   # put all testing images inside my_test_set/images/
+  mkdir -p /your_path/my_test_test/images/
   cd on-demand-learning/
   ln -sf /your_path dataset
   ```
 
-5. [Optional] If you want to run a quick demo for the four image restoration tasks, please download our pre-trained models using the following script. As in 4, please also create a folder called `my_demo_images` and place all your testing images under a sub-folder called `images`.
-
+5. [Optional] If you want to run a quick demo for the four image restoration tasks, please download our pre-trained models using the following script.
+  ```Shell
+  cd models
+  #download image inpainting model
+  bash download_model.sh inpainting
+  #download pixel interpolation model
+  bash download_model.sh pixelInterpolation
+  #download image deblurring model
+  bash download_model.sh deblurring
+  #download image denoising model
+  bash download_model.sh denoising
+  ```
+  
 6. [Optional] Install the Display Package, which enables you to track the training progress. If you don't want to install it, please set `display=0` in `train.lua`.
   ```Shell
   luarocks install https://raw.githubusercontent.com/szym/display/master/display-scm-0.rockspec
@@ -104,6 +115,7 @@ If you find our code or project useful in your research, please cite:
   cd deblurring
   DATA_ROOT=dataset/my_train_set name=deblur niter=250 loadSize=96 fineSize=64 display=1 display_iter=50 gpu=1 th train.lua
   ```
+  
 ### 4) Image Denoising
 Denoising/DB11 contains 11 classic images commonly used to evaluate image denoising algorithms. Because the input of our network is of size 64 x 64, given an image of arbitrary size (assuming larger than 64 x 64), we use a sliding-window approach to denoise each patch separately, then average outputs at overlapping pixels.
   ```Shell
@@ -114,3 +126,4 @@ Denoising/DB11 contains 11 classic images commonly used to evaluate image denois
   ```
 
 ### 5) Sample Code for All Training Schemes
+training_schemes contains scripts or sample scripts of different training schemes attempted in the paper, including on-demand learning, rigid-joint learning, staged (anti-)curriculum learning and cumulative (anti-)curriculum learning. 
