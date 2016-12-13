@@ -30,16 +30,14 @@ If you find our code or project useful in your research, please cite:
 2. Install torch-opencv: https://github.com/VisionLabs/torch-opencv/wiki/Installation
 
 3. Clone the repository
+
   ```Shell
   git clone https://github.com/rhgao/on-demand-learning.git
   ```
-4. Download [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) or [SUN397](http://vision.cs.princeton.edu/projects/2010/SUN/) dataset, or prepare your own dataset.
-- Create a folder called `my_training_images`.
-- Inside that folder, create a folder called `images` and place all your training images inside it.
+  
+4. Download [CelebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) or [SUN397](http://vision.cs.princeton.edu/projects/2010/SUN/) dataset, or prepare your own dataset. Create a folder called `my_training_images`. Inside that folder, create a folder called `images` and place all your training images inside it.
 
 5. [Optional] If you want to run a quick demo for the four image restoration tasks, please download our pre-trained models using the following script. As in 4, please also create a folder called `my_demo_images` and place all your testing images under a sub-folder called `images`.
-
-  ```
 
   
 ### 1) Image Inpainting
