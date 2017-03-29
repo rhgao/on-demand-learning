@@ -1,8 +1,6 @@
 ## From One-Trick Ponies to All-Rounders:  On-Demand Learning for Image Restoration
 [[Project Page]](http://vision.cs.utexas.edu/projects/on_demand_learning/)    [[arXiv]](https://arxiv.org/abs/1612.01380)<br/>
 
-![teaser](teaser.jpg "qualitative results on three image restoration tasks")
-
 This repository contains the training code for our [arXiv paper on All-Rounders for Image Restoration](https://arxiv.org/abs/1612.01380). We propose an on-demand learning algorithm for training image restoration models with deep convolutional neural networks that can generalize across difficulty levels. This repo contains our code for four image restoration tasks---image inpainting, pixel interpolation, image deblurring, and image denoising. The code is adapted from [Soumith's DCGAN Implementation](https://github.com/soumith/dcgan.torch) and [Deepak Pathak's Context Encoder Implementation](https://github.com/pathak22/context-encoder).
 
 If you find our code or project useful in your research, please cite:
@@ -21,8 +19,8 @@ If you find our code or project useful in your research, please cite:
 2. [Pixel Interpolation](#2-pixel-interpolation)
 3. [Image Deblurring](#3-image-deblurring)
 4. [Image Denoising](#4-image-denoising)
-5. [Sample Code for All Training Schemes](#5-sample-code-for-all-training-schemes)
-
+5. [Image Denoising of Arbitrary Sizes](#5-image-denoising-anysize)
+6. [Sample Code for All Training Schemes](#5-sample-code-for-all-training-schemes)
 ### 1) Preparation
 
 1. Install Torch: http://torch.ch/docs/getting-started.html
@@ -57,6 +55,8 @@ If you find our code or project useful in your research, please cite:
   bash download_model.sh deblurring
   #download image denoising model
   bash download_model.sh denoising
+  #download our image denoising model equipped to denoise images of any size
+  bash download_model.sh denoise_anysize
   ```
   
 6. [Optional] Install the Display Package, which enables you to track the training progress. If you don't want to install it, please set `display=0` in `train.lua`.
@@ -115,15 +115,31 @@ If you find our code or project useful in your research, please cite:
   cd deblurring
   DATA_ROOT=../dataset/my_train_set name=deblur niter=250 loadSize=96 fineSize=64 display=1 display_iter=50 gpu=1 th train.lua
   ```
-  
+
 ### 5) Image Denoising
+1. Demo
+  ```Shell
+  # Test the image denoising model on various corruption levels
+  cd deblurring
+  DATA_ROOT=../dataset/my_test_set name=denoise_demo net=../models/denoising_net_G.t7 sigma=25 manualSeed=333 gpu=1 display=1 th demo.lua
+  # Demo results saved as denoise_demo.png
+  ```
+  
+2. Train the model
+  ```Shell
+  # Train your own image denoising model
+  cd denoising
+  DATA_ROOT=../dataset/my_train_set name=denoise niter=1500 loadSize=96 fineSize=64 display=1 display_iter=50 gpu=1 th train.lua
+  ```
+
+### 6) Image Denoising of Arbitrary Sizes
 Denoising/DB11 contains 11 classic images commonly used to evaluate image denoising algorithms. Because the input of our network is of size 64 x 64, given an image of arbitrary size (assuming larger than 64 x 64), we use a sliding-window approach to denoise each patch separately, then average outputs at overlapping pixels.
   ```Shell
   # Denoise classic image Lena from DB11 dataset
-  cd denoising
-  img_path=DB11/Lena.png name=denoise net=../models/denoising_net_G.t7 sigma=25 stepSize=3 gpu=1 th denoise.lua
+  cd denoise_anysize
+  img_path=DB11/Lena.png name=denoise net=../models/denoise_anysize_net_G.t7 sigma=25 stepSize=3 gpu=1 th denoise.lua
   # Denoising results saved as denoise.png
   ```
 
-### 6) Sample Code for All Training Schemes
-training_schemes contains scripts or sample scripts of different training schemes attempted in the paper, including on-demand learning, rigid-joint learning, staged (anti-)curriculum learning and cumulative (anti-)curriculum learning. 
+### 7) Sample Code for Training Schemes
+training_schemes contains a sample script that can be adapted for different training schemes attempted in the paper, including on-demand learning, rigid-joint learning, staged (anti-)curriculum learning and cumulative (anti-)curriculum learning.
