@@ -1,18 +1,32 @@
 ## From One-Trick Ponies to All-Rounders:  On-Demand Learning for Image Restoration
 [[Project Page]](http://vision.cs.utexas.edu/projects/on_demand_learning/)    [[arXiv]](https://arxiv.org/abs/1612.01380)<br/>
 
-This repository contains the training code for our [arXiv paper on All-Rounders for Image Restoration](https://arxiv.org/abs/1612.01380). We propose an on-demand learning algorithm for training image restoration models with deep convolutional neural networks that can generalize across difficulty levels. This repo contains our code for four image restoration tasks---image inpainting, pixel interpolation, image deblurring, and image denoising. The code is adapted from [Soumith's DCGAN Implementation](https://github.com/soumith/dcgan.torch) and [Deepak Pathak's Context Encoder Implementation](https://github.com/pathak22/context-encoder).
+This repository contains the training code for our [ICCV 2017 paper on All-Rounders for Image Restoration](http://vision.cs.utexas.edu/projects/on_demand_learning/gao-iccv2017.pdf). We propose an on-demand learning algorithm for training image restoration models with deep convolutional neural networks that can generalize across difficulty levels. This repo contains our code for four image restoration tasks---image inpainting, pixel interpolation, image deblurring, and image denoising. The code is adapted from [Soumith's DCGAN Implementation](https://github.com/soumith/dcgan.torch) and [Deepak Pathak's Context Encoder Implementation](https://github.com/pathak22/context-encoder).
 
 If you find our code or project useful in your research, please cite:
 
-        @article{gao2016on-demand,
-          title={From One-Trick Ponies to All-Rounders: On-Demand Learning for Image Restoration},
+        @inproceedings{gao2017on-demand,
+          title={On-Demand Learning for Deep Image Restoration},
           author={Gao, Ruohan and Grauman, Kristen},
-          journal={arXiv},
-          year={2016}
+          booktitle={ICCV},
+          year={2017}
         }
 
+Please also consider citing:
 
+        @inproceedings{radford2016unsupervised,
+          title={Unsupervised representation learning with deep convolutional generative adversarial networks},
+          author={Radford, Alec and Metz, Luke and Chintala, Soumith},
+          booktitle={ICLR},
+          year={2016}
+        }
+        
+        @inproceedings{pathak2016context,
+          title={Context Encoders: Feature Learning by Inpainting},
+          author={Pathak, Deepak and Krahenbuhl, Philipp and Donahue, Jeff and Darrell, Trevor and Efros, Alexei A},
+           booktitle={CVPR},
+          year={2016}
+        }
 ### Contents
 0. [Preparation](#0-preparation)
 1. [Image Inpainting](#1-image-inpainting)
