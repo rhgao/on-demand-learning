@@ -1,4 +1,4 @@
-## From One-Trick Ponies to All-Rounders:  On-Demand Learning for Image Restoration
+## On-Demand Learning for Deep Image Restoration
 [[Project Page]](http://vision.cs.utexas.edu/projects/on_demand_learning/)    [[arXiv]](https://arxiv.org/abs/1612.01380)<br/>
 
 This repository contains the training code for our [ICCV 2017 paper on All-Rounders for Image Restoration](http://vision.cs.utexas.edu/projects/on_demand_learning/gao-iccv2017.pdf). We propose an on-demand learning algorithm for training image restoration models with deep convolutional neural networks that can generalize across difficulty levels. This repo contains our code for four image restoration tasks---image inpainting, pixel interpolation, image deblurring, and image denoising. The code is adapted from [Soumith's DCGAN Implementation](https://github.com/soumith/dcgan.torch) and [Deepak Pathak's Context Encoder Implementation](https://github.com/pathak22/context-encoder).
